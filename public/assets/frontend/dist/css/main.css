@@ -916,6 +916,7 @@ button.btn-heading[type=submit] {
   border-color: #253D4E;
   font-weight: 700;
   border: 0;
+  /* border-radius: 5px; */
 }
 
 button.submit,
@@ -966,7 +967,7 @@ button[type=submit]:hover {
   font-size: 14px;
   font-weight: 700;
   padding: 12px 30px;
-  border-radius: 0;
+  border-radius: 5px;
   color: #fff;
   border: 1px solid transparent;
   background-color: var(--colorSecondary);
