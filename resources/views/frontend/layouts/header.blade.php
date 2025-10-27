@@ -153,8 +153,14 @@
                                             <a href="#"><i class="fi fi-rs-settings-sliders mr-10"></i>Setting</a>
                                         </li>
                                         <li>
-                                            <a href="#"><i class="fi fi-rs-sign-out mr-10"></i>Sign
+                                            <a onclick="event.preventDefault();
+                                                $('.logout-form').submit();"
+                                                href=""><i class="fi fi-rs-sign-out mr-10"></i>Sign
                                                 out</a>
+                                            <form method="POST" action="{{ route('logout') }}" class="logout-form">
+                                                @csrf
+
+                                            </form>
                                         </li>
                                     </ul>
                                 </div>
