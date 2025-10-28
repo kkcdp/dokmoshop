@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\Frontend\UserDashboardController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Frontend\ProfileController;
+use App\Http\Controllers\Frontend\UserDashboardController;
 
 Route::get('/', function () {
     return view('frontend.home.index');
@@ -10,7 +11,14 @@ Route::get('/', function () {
 
 Route::group(['middleware' => ['auth:web', 'verified']], function () {
     Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('dashboard');
+    /** Profile Routes  **/
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+    Route::post('/profile', [ProfileController::class, 'profileUpdate'])->name('profile.update');
 });
+
+
+
+
 
 
 
